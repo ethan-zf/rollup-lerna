@@ -13,14 +13,14 @@ import del from 'rollup-plugin-delete';
 import { terser } from 'rollup-plugin-terser';
 
 let version = require('../common/version');
-let fileName = './dist/kmap-base.js';
+let fileName = './dist/app1.js';
 export default {
   input: './index.ts',
   output: {
     file: fileName,
     format: 'umd',
     name: 'kmapBase',
-    banner: `/* @KMap: kmap-base version ${version} */`,
+    banner: `/* @KMap: app1 version ${version} */`,
   },
   plugins: [
     del({ targets: fileName }),

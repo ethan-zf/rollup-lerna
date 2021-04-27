@@ -1,13 +1,13 @@
 {
-  "name": "kmap-lbs",
+  "name": "app2",
   "version": "0.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=kd rollup -c",
-    "publish": "cd dist && knpm publish",
-    "copy": "cp -r dist/kmap-lbs.js ../dist/kmap-lbs.js"
+    "publish": "cd dist && npm publish",
+    "copy": "cp -r dist/app2.js ../dist/app2.js"
   },
   "keywords": [],
   "author": "",

@@ -12,14 +12,14 @@ import del from 'rollup-plugin-delete';
 import { terser } from 'rollup-plugin-terser';
 
 let version = require('../common/version');
-let fileName = './dist/kmap-core.js';
+let fileName = './dist/base.js';
 export default {
   input: './index.ts',
   output: {
     file: fileName,
     format: 'umd',
     name: 'kmapCore',
-    banner: `/* @KMap: kmap-core version ${version} */`,
+    banner: `/* @KMap: base version ${version} */`,
   },
   plugins: [
     del({ targets: fileName }),
@@ -41,7 +41,6 @@ export default {
     replace({
       exclude: 'node_modules/**',
       'process.env.MAP_TYPE': JSON.stringify(process.env.NODE_ENV),
-      'require.main': '"FIX_LATER"', //TODO...
       'process.env.KMAP_CORE_VERSION': JSON.stringify(version),
       preventAssignment: true,
     }),

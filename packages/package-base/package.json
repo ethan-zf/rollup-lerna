@@ -1,12 +1,12 @@
 {
-  "name": "kmap-core",
-  "version": "0.0.12",
+  "name": "base",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=kd rollup -c",
-    "publish": "cd dist && knpm publish",
+    "publish": "cd dist && npm publish",
     "copy": "cp -r dist/kmap-core.js ../dist/kmap-core.js"
   },
   "keywords": [],
