@@ -1,0 +1,9 @@
+packages/package-map-adapter/mapbox/*
+packages/package-map-adapter/minemap/*
+packages/package-core/kmap-base/tools/html2canvas.js
+packages/packages-core/apis/*
+demo/*
+packages/package-track/libs/*
+packages/package-core/draw/src/*
+packages/package-core/geov/*
+packages/package-visual/tools/*

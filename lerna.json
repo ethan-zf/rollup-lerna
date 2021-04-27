@@ -1,0 +1,25 @@
+{
+  "packages": [
+    "packages/package-base",
+    "packages/package-app1",
+    "packages/package-app2"
+  ],
+  "version": "0.0.7",
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "ignored-file",
+        "*.md"
+      ],
+      "message": "chore(release): publish"
+    },
+    "bootstrap": {
+      "hoist": false,
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    },
+    "ignore": "test*"
+  }
+}
