@@ -1,0 +1,27 @@
+{
+  "name": "kmap-base",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=kd rollup -c",
+    "publish": "cd dist && knpm publish",
+    "copy": "cp -r dist/kmap-base.js ../dist/kmap-base.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "dependencies": {
+    "postcss": "8.2.8",
+    "rollup-plugin-postcss": "4.0.0",
+    "postcss-url": "10.1.3"
+  },
+  "devDependencies": {
+    "@types/lodash.isempty": "^4.4.6",
+    "@types/lodash.isundefined": "^3.0.6"
+  }
+}

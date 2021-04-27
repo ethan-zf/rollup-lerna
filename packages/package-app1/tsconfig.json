@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "es5",
+    "allowJs": true,
+    "checkJs": true,
+    "strict": false,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "lib": [
+      "es5",
+      "es6",
+      "ESNext",
+      "es2017",
+      "dom"
+    ],
+    "types": [
+      "reflect-metadata"
+    ],
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictNullChecks": false,
+    "resolveJsonModule": true,
+    "importHelpers": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "kmap-lbs",
+  "version": "0.0.7",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=kd rollup -c",
+    "publish": "cd dist && knpm publish",
+    "copy": "cp -r dist/kmap-lbs.js ../dist/kmap-lbs.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "dependencies": {
+    "postcss": "8.2.8",
+    "rollup-plugin-postcss": "4.0.0",
+    "postcss-url": "10.1.3"
+  }
+}
