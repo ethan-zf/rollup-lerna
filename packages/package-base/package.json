@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=kd rollup -c",
     "publish": "cd dist && npm publish",
-    "copy": "cp -r dist/kmap-core.js ../dist/kmap-core.js"
+    "copy": "cp -r dist/base.js ../dist/base.js"
   },
   "keywords": [],
   "author": "",

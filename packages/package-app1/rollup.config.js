@@ -12,7 +12,7 @@ import del from 'rollup-plugin-delete';
 // import visualizer from 'rollup-plugin-visualizer';
 import { terser } from 'rollup-plugin-terser';
 
-let version = require('../common/version');
+let version = require('../version');
 let fileName = './dist/app1.js';
 export default {
   input: './index.ts',
@@ -49,15 +49,15 @@ export default {
       babelHelpers: 'bundled',
       exclude: ['node_modules/**', '../../node_modules/**', /.*mapbox-gl.*/, /.*minemap.*/],
     }),
-    terser({
-      output: {
-        comments: function (node, comment) {
-          if (comment.type == 'comment2') {
-            return /@KMap/i.test(comment.value);
-          }
-        },
-      },
-    }),
+    // terser({
+    //   output: {
+    //     comments: function (node, comment) {
+    //       if (comment.type == 'comment2') {
+    //         return /@KMap/i.test(comment.value);
+    //       }
+    //     },
+    //   },
+    // }),
   ],
   external: ['kmap-core'],
 };
