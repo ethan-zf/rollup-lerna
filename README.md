@@ -12,7 +12,21 @@ Typescript + rollup + lerna 实现的多包开发模式，项目实践中的一�
 
 > 踩坑记录
 
-@rollup/plugin-commonjs ：
+- **@rollup/plugin-commonjs** 
+
+ 默认情况下rollup只能处理es6模块，但是npm中的大多数包都是以CommonJS模块的形式出现的，所以需要使用这个插件将CommonJS模块转换为 ES2015
+
+- **@rollup/plugin-node-resolve**
+
+rollup 默认是不支持从 node_modules 里面查找模块的，使用 @rollup/plugin-node-resolve 可以解决这个问题。
+
+值得一提的是，如果应用运行在浏览器端，需要将browser参数设置为true,这样插件将使用package.json中的浏览器模块解析，否则一些三方库可能存在环境变量问题，如axios。
+
+- @rollup/plugin-json 
+
+支持import的形式引入json
+
+
 
 
 **完整的rollup.config：**
