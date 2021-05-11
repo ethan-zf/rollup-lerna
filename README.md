@@ -6,9 +6,15 @@
 `package-app1`及`package-app2`基于`kmap-base`实现业务功能包装
 
 ## 概述
-Typescript + rollup + lerna 实现的多包开发模式，项目实践中的一些记录。
+由于项目本身为类库性质，静态资源少，且工程较大，对打包速度和pkg体积有一定要求，并且需要实现多包的拆分，
+因此最终选择了 Typescript + rollup + lerna 的方式。
 
-**常用插件介绍**
+借助Typescript强类型校验增强程序的健壮性，相比webpack，rollup更加快速，出包体积更小，成为项目首选。
+
+lerna是monorepo管理方式的一个成熟的实现，简单理解就是lerna为我们提供了
+多包之间依赖的管理，多线程同步的执行命令，同步发布版本等等。
+
+**rollup常用插件介绍**
 
 > 踩坑记录
 
@@ -22,10 +28,33 @@ rollup 默认是不支持从 node_modules 里面查找模块的，使用 @rollup
 
 值得一提的是，如果应用运行在浏览器端，需要将browser参数设置为true,这样插件将使用package.json中的浏览器模块解析，否则一些三方库可能存在环境变量问题，如axios。
 
-- @rollup/plugin-json 
+- **@rollup/plugin-json** 
 
 支持import的形式引入json
 
+- **@rollup/plugin-babel **
+ babel相关的一些插件，根据项目情况按需使用
+ @babel/core //babel 核心文件
+ @babel/preset-env //自动转化语法
+ @babel/plugin-proposal-decorators//装饰器
+ @babel/proposal-object-rest-spread//对象展开操作符
+ @babel/plugin-syntax-dynamic-import//支持动态import
+
+- **rollup-plugin-typescript2**
+参考了其他大佬的方案，放弃了官方提供的 @rollup/plugin-typescript和babel的 @babel/preset-typescript。自己测试下来的确问题比较多
+最终的方案是 rollup-plugin-typescript2 ，这个是社区提供的一种解决方案，集成了 tslib，没有抛弃类型检查，不需要额外安装包（除了 typescript 本身），速度也很快
+不要犹豫，就是它！
+
+- **rollup-plugin-postcss**
+css样式处理插件
+如css中background-image等涉及图片的样式，则需要引入一个postcss的插件postcss-url（注意，不是rollup的插件）,'inline'模式会将url对应的图片替换为base64
+
+```
+postcss({
+      plugins: [url({ url: 'inline' })],
+      extensions: ['.css']
+})
+```
 
 
 
