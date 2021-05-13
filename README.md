@@ -76,6 +76,20 @@ postcss({
   }
  ```
 
+- **@rollup/plugin-image**
+如果js文件中通过require加载图片，如require('*/img-path'); 则rollup无法直接处理
+
+需要借助@rollup/plugin-image 将图片转成base64。使用时在文件头部直接用import的方式引入图片即可
+
+```
+// 修改前
+let img = require('*/img-path'); 
+
+//修改后
+
+import img from '*/img-path';
+
+```
 
 
 **完整的rollup.config：**
